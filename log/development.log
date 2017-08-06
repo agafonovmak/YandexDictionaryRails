@@ -1,0 +1,1109 @@
+Started GET "/" for 127.0.0.1 at 2017-08-06 12:55:03 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 101ms (Views: 5.0ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 13:14:49 +0300
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 712ms (Views: 615.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTranslations (20170806101601)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from" varchar, "to" varchar, "direction" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170806101601"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-06 10:17:51.930117"], ["updated_at", "2017-08-06 10:17:51.930117"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:10:40 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 234ms (Views: 215.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/dictionary" for 127.0.0.1 at 2017-08-06 14:10:57 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for DictionaryController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/dictionary" for 127.0.0.1 at 2017-08-06 14:14:59 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for DictionaryController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:15:01 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 11ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:15:06 +0300
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 197ms (Views: 182.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/dictionary" for 127.0.0.1 at 2017-08-06 14:15:08 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for DictionaryController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:15:56 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"translate", :controller=>"dictionary"}):
+    1: <h1>Yandex dictionary wrapper</h1>
+    2: 
+    3: <%= form_for :translation, :url => url_for(:action => 'translate') do |f| %>
+    4: <p>
+    5:   <%= f.label :title %><br>
+    6:   <%= f.text_field :from %>
+  
+app/views/dictionary/index.html.erb:3:in `_app_views_dictionary_index_html_erb___4538161395913336855_30788180'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:17:49 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 237ms (Views: 219.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:17:52 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/translate"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:18:07 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 238ms (Views: 219.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:18:09 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3+D2LkNcop/pjt3MeYoddoA4MrohX+tknvoZ4n+G8SrkKVdTjZkpNeEr6PcHNLR6TJI7QPcj0i+0krTRTIHhrw==", "translation"=>{"from"=>"sdfgdfg"}, "commit"=>"Save Translation"}
+No template found for DictionaryController#translate, rendering head :no_content
+Completed 204 No Content in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:22:29 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 234ms (Views: 215.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:22:32 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B/sWyZ2zPVv8dwxUNEMl528jWJ6BT4ZDkGk7aQ15JyA8Mre0U3a28fTSOW9K/Yzro4lRZFczvwi6AZZaPn43pQ==", "translation"=>{"from"=>"sdfgd"}, "commit"=>"Save Translation"}
+No template found for DictionaryController#translate, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:25:50 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 241ms (Views: 218.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:26:08 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P8HGt0D2cnfXVcuLyDbdGXgZl5cmbzV/B/jSlNDDzHkECGfKjjP53d/w/rC2iHQVtLOebfATDDQtkH+n48Tc/A==", "translation"=>{"from"=>"ru-ru"}, "commit"=>"Перевести"}
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `translation' for #<DictionaryController:0x007f0259a47998>
+Did you mean?  translation_hash
+               translate):
+  
+app/controllers/dictionary_controller.rb:8:in `translate'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:26:41 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 233ms (Views: 215.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:26:44 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MFGaZZmD9+17BKn5x/FwrmYg1fgdolNGk9Lb3a2Dg68LmDsYV0Z8R3OhnMK5T9miqorcAsveag25unbunoSTKg==", "translation"=>{"from"=>"asdfa"}, "commit"=>"Перевести"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `from=' for nil:NilClass):
+  
+app/controllers/dictionary_controller.rb:8:in `translate'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:27:50 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (undefined local variable or method `translation' for #<DictionaryController:0x0000000375a938>
+Did you mean?  @translation
+               translate):
+  
+app/controllers/dictionary_controller.rb:4:in `index'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:28:07 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.6ms)
+
+
+  
+NameError (undefined local variable or method `translation' for #<DictionaryController:0x000000023f1a18>
+Did you mean?  @translation
+               translate):
+  
+app/controllers/dictionary_controller.rb:4:in `index'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:28:19 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 234ms (Views: 215.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:28:23 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rqqk3V4RXQ+YHXlvls1qPpuPI3hZjgqHfhX7gTIvOYt9YwWgkNTWpZC4TFToc8MyVyUqgo/yM8xUfVayASgpDg==", "translation"=>{"from"=>"sdfgsdfg"}, "commit"=>"Перевести"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `from=' for nil:NilClass):
+  
+app/controllers/dictionary_controller.rb:9:in `translate'
+Started GET "/translate" for 127.0.0.1 at 2017-08-06 14:29:08 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/translate"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-06 14:29:16 +0300
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 206ms (Views: 203.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:29:19 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SUYu6TvbWctBpvML+1Gj3UtJurTxhwCHVx7IReHLkClyj4+U9R7SYUkDxjCF7wrRh+OzTif7Ocx9dmV20syArA==", "translation"=>{"from"=>"sdfgsdfg"}, "commit"=>"Перевести"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `from=' for nil:NilClass):
+  
+app/controllers/dictionary_controller.rb:7:in `translate'
+Started GET "/translate" for 127.0.0.1 at 2017-08-06 14:30:10 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/translate"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:31:01 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 212ms (Views: 205.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:31:05 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5CWSKsB6AySjTcFX5m98JJ2CQDI+h6PzhUgknqZAVmzf7DNXDr+Ijqvo9GyY0dUoUShJyOj7mrivIImtlUdG6Q==", "translation"=>{"from"=>"sdfgsdfg"}, "commit"=>"Перевести"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/dictionary_controller.rb:6:in `translate'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:32:09 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 208ms (Views: 201.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:32:13 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISvVVTfKUEiQpw2KaJy7+JY3U/ocjWdvrnBKUrl0Ei8a4nQo+Q/b4pgCOLEWIhL0Wp1aAMrxXiSEGOdhinMCqg==", "translation"=>{"from"=>"sdfg"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "sdfg"], ["created_at", "2017-08-06 11:32:13.612320"], ["updated_at", "2017-08-06 11:32:13.612320"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for DictionaryController#translate, rendering head :no_content
+Completed 204 No Content in 40ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:32:28 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 207ms (Views: 200.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:32:31 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GC90mXR3SKXUq1zJe0Ie4gFHPnuuQleeXn0q1KsJ9pgj5tXkurLDD9wOafIF/Lfuze03gXg+btV0FYfnmA7mHQ==", "translation"=>{"from"=>"d"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "d"], ["created_at", "2017-08-06 11:32:31.718595"], ["updated_at", "2017-08-06 11:32:31.718595"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+No template found for DictionaryController#translate, rendering head :no_content
+Completed 204 No Content in 34ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:34:50 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/maxim/YandexDictionaryRails/YandexDictionaryRails/app/controllers/dictionary_controller.rb:13: syntax error, unexpected ':', expecting keyword_end
+    render: 'translation#show'
+           ^):
+  
+app/controllers/dictionary_controller.rb:13: syntax error, unexpected ':', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:34:57 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/maxim/YandexDictionaryRails/YandexDictionaryRails/app/controllers/dictionary_controller.rb:13: syntax error, unexpected ':', expecting keyword_end
+    render: 'translation#show'
+           ^):
+  
+app/controllers/dictionary_controller.rb:13: syntax error, unexpected ':', expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:35:39 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 231ms (Views: 223.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:35:43 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pFDQK8865A9qBlYrEjLouiRTRtq6wYUhJNjdKUuMdzOfmXFWAf9vpWKjYxBsjEG26PlPIGy9vGoOsHAaeItntg==", "translation"=>{"from"=>"sdf"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "sdf"], ["created_at", "2017-08-06 11:35:43.497663"], ["updated_at", "2017-08-06 11:35:43.497663"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 43ms (Views: 23.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/translate" for 127.0.0.1 at 2017-08-06 14:36:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/translate"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:36:11 +0300
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:36:13 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jYTr9ZrTIavsJQM5kvPWYiFuz0gf0pqLi7vqYFn4vXa2TUqIVBaqAeSANgLsTX9u7cTGssmuo8Ch00dTav+t8w==", "translation"=>{"from"=>"в"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "в"], ["created_at", "2017-08-06 11:36:13.052977"], ["updated_at", "2017-08-06 11:36:13.052977"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 19.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:39:55 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 211ms (Views: 204.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:39:58 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3I6kLA9UdM7nz+SpSUSDfa/wM1UNyH1BM4cxqfdtx+jnRwVRwZH/ZO9q0ZI3+ipxY1o6r9u0RAoZ75yaxGrXbQ==", "translation"=>{"from"=>"df"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "df"], ["created_at", "2017-08-06 11:39:58.928828"], ["updated_at", "2017-08-06 11:39:58.928828"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 7.5ms)
+
+
+  
+NoMethodError (undefined method `translation_url' for #<DictionaryController:0x007faeb60872c8>
+Did you mean?  translate_url):
+  
+app/controllers/dictionary_controller.rb:13:in `translate'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:41:18 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 259ms (Views: 252.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 14:41:21 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8pvU6MMrB4ZUMNKTPRkEZehxx1WU6vq/stnvXZhoYjnJUnWVDe6MLFyV56hDp61pJNvOr0KWw/SYsUJuq29yvA==", "translation"=>{"from"=>"f"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "f"], ["created_at", "2017-08-06 11:41:21.202116"], ["updated_at", "2017-08-06 11:41:21.202116"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 5.5ms)
+
+
+  
+NoMethodError (undefined method `translation_url' for #<DictionaryController:0x0000000539b728>
+Did you mean?  translate_url):
+  
+app/controllers/dictionary_controller.rb:13:in `translate'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:42:30 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"translation"}):
+    1: <h1>Yandex dictionary wrapper</h1>
+    2: 
+    3: <%= form_for :translation, :url => url_for(:controller => 'translation') do |f| %>
+    4: <p>
+    5:   <%= f.label :Слово %><br>
+    6:   <%= f.text_field :from %>
+  
+app/views/dictionary/index.html.erb:3:in `_app_views_dictionary_index_html_erb__4288675493006311723_28769060'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:42:54 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 234ms (Views: 226.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:42:57 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"68aucXWXMgFHZIIbY6PNjN/c2Km5MRsQdj6zm8n/hObQDw8Mu1K5q0/BtyAdHWSAE3bRU29NIltcVh6o+viUYw==", "translation"=>{"from"=>"r"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "r"], ["created_at", "2017-08-06 11:42:57.409465"], ["updated_at", "2017-08-06 11:42:57.409465"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/translation/7
+Completed 302 Found in 22ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/translation/7" for 127.0.0.1 at 2017-08-06 14:42:57 +0300
+Processing by TranslationController#show as HTML
+  Parameters: {"id"=>"7"}
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `from' for nil:NilClass):
+    1: <h1>Перевод</h1>
+    2: <% @translation.from %>
+  
+app/views/translation/show.html.erb:2:in `_app_views_translation_show_html_erb___1667499529597157931_69849331051400'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:43:53 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 237ms (Views: 230.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:43:56 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ed/zeNp+xlLWKO2oKcBlT5igvZHPT7W6ZLqNPeF2pZBCFlIFFLtN+N6N2JNXfsxDVAq0axkzjPFO0iAO0nG1FQ==", "translation"=>{"from"=>"g"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "g"], ["created_at", "2017-08-06 11:43:56.273657"], ["updated_at", "2017-08-06 11:43:56.273657"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 7.4ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial translations/_translation with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/maxim/YandexDictionaryRails/YandexDictionaryRails/app/views"
+):
+  
+app/controllers/translation_controller.rb:13:in `create'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:44:59 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 233ms (Views: 226.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:45:03 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"thcUNERdrXpeO5sOrnxH4H9IIxi3mqBnGe5SzjSyvcGN3rVJipgm0FaerjXQwu7ss+Iq4mHmmSwzhv/9B7WtRA==", "translation"=>{"from"=>"g"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "g"], ["created_at", "2017-08-06 11:45:03.087741"], ["updated_at", "2017-08-06 11:45:03.087741"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial translations/_translation with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/maxim/YandexDictionaryRails/YandexDictionaryRails/app/views"
+):
+  
+app/controllers/translation_controller.rb:14:in `create'
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:45:46 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 232ms (Views: 225.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:45:48 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qlEg9YNkSHlYFaMhfWd2aY3zRkHFOrTwI/pmFt/GoueRmIGITaHD01CwlhoD2d9lQVlPuxNGjbsJkssl7MGyYg==", "translation"=>{"from"=>"f"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "f"], ["created_at", "2017-08-06 11:45:49.015731"], ["updated_at", "2017-08-06 11:45:49.015731"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/translation/10
+Completed 302 Found in 29ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/translation/10" for 127.0.0.1 at 2017-08-06 14:45:49 +0300
+Processing by TranslationController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT  "translations".* FROM "translations" WHERE "translations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 31.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:46:15 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 246ms (Views: 239.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:46:18 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hnwBZF0b5L8io5ISLmKuoxg6bjWMXM8jo8fceq/vG7O9taAZk95vFSoGpylQ3Aev1JBnz1og9miJr3FJnOgLNg==", "translation"=>{"from"=>"df"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "df"], ["created_at", "2017-08-06 11:46:18.594231"], ["updated_at", "2017-08-06 11:46:18.594231"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/translation/11
+Completed 302 Found in 25ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/translation/11" for 127.0.0.1 at 2017-08-06 14:46:18 +0300
+Processing by TranslationController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTranslation Load (0.5ms)[0m  [1m[34mSELECT  "translations".* FROM "translations" WHERE "translations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/translation/11" for 127.0.0.1 at 2017-08-06 14:46:57 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TranslationController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTranslation Load (0.1ms)[0m  [1m[34mSELECT  "translations".* FROM "translations" WHERE "translations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 245ms (Views: 223.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 14:49:25 +0300
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:49:37 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qm2l6K952aXSre1KXZ4kX9JFVjE12jMijVLYOxREDKF5pASVYbxSD9oI2HEjII1THu9fy+OmCmmnOnUIJ0McJA==", "translation"=>{"from"=>"ывап"}, "commit"=>"Перевести"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "ывап"], ["created_at", "2017-08-06 11:49:37.007734"], ["updated_at", "2017-08-06 11:49:37.007734"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/translation/12
+Completed 302 Found in 13ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/translation/12" for 127.0.0.1 at 2017-08-06 14:49:37 +0300
+Processing by TranslationController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT  "translations".* FROM "translations" WHERE "translations"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/translation" for 127.0.0.1 at 2017-08-06 14:49:55 +0300
+Processing by TranslationController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qm2l6K952aXSre1KXZ4kX9JFVjE12jMijVLYOxREDKF5pASVYbxSD9oI2HEjII1THu9fy+OmCmmnOnUIJ0McJA==", "translation"=>{"from"=>"ппопопоролр"}, "commit"=>"Перевести"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "translations" ("from", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["from", "ппопопоролр"], ["created_at", "2017-08-06 11:49:55.241741"], ["updated_at", "2017-08-06 11:49:55.241741"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/translation/13
+Completed 302 Found in 12ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/translation/13" for 127.0.0.1 at 2017-08-06 14:49:55 +0300
+Processing by TranslationController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mTranslation Load (0.1ms)[0m  [1m[34mSELECT  "translations".* FROM "translations" WHERE "translations"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering translation/show.html.erb within layouts/application
+  Rendered translation/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 15:45:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 231ms (Views: 224.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 15:45:52 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 200ms (Views: 193.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 15:55:34 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 233ms (Views: 226.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:01:58 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `from' for nil:NilClass):
+    2:   <%= form_for :translation, :url => url_for(:controller => 'translation') do |f| %>
+    3:   <p>
+    4:     <%= f.label :Слово %><br>
+    5:     <%= f.text_field :from, :value => @translation.from %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/dictionary/index.html.erb:5:in `block in _app_views_dictionary_index_html_erb___3701178700699975916_22562720'
+app/views/dictionary/index.html.erb:2:in `_app_views_dictionary_index_html_erb___3701178700699975916_22562720'
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:02:40 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 237ms (Views: 220.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:09:25 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 246ms (Views: 228.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:09:29 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4PyMNsrDeTfV2wK1SFk3DsS2cWdSD07DEhoETvkY1zrbNS1LBAbynd1+N442554CCBx4nYRzd4g4cql9yh/Hvw==", "translation"=>{"from"=>"sdfg", "direction"=>"dsfg", "to"=>""}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "sdfg"], ["direction", "dsfg"], ["created_at", "2017-08-06 13:09:29.390021"], ["updated_at", "2017-08-06 13:09:29.390021"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000index
+Completed 302 Found in 13ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:10:27 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 238ms (Views: 219.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:10:31 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"crPdG2+wzlgRzQlDBsobRuoTKsRo6mi0bh9OzVtxvnFJenxmoXVF8hloPHh4dLJKJrkjPr6WUf9Ed+P+aHau9A==", "translation"=>{"from"=>"dfg", "direction"=>"dfg", "to"=>""}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "dfg"], ["direction", "dfg"], ["created_at", "2017-08-06 13:10:31.690465"], ["updated_at", "2017-08-06 13:10:31.690465"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 36ms (Views: 24.2ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:10:38 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kRB+xNgyQzdCOK7/5nX84JDLCsJMWhcRFn55rBCM9QCq2d+5FvfInUqdm8SYy1XsXGEDOJomLlo8FtSfI4vlhQ==", "translation"=>{"from"=>"dfgdfg", "direction"=>"dfgdfg", "to"=>"ПЕРЕВОД"}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "dfgdfg"], ["direction", "dfgdfg"], ["created_at", "2017-08-06 13:10:38.742605"], ["updated_at", "2017-08-06 13:10:38.742605"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 56ms (Views: 43.7ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:11:41 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 239ms (Views: 220.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:11:50 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lGdSvlCjRPpVolb8fBQVb46PFD+hiwIfniRyw6x6EEKvrvPDnmbPUF0HY8cCqrxjQiUdxXf3O1S0TN/wn30Axw==", "translation"=>{"from"=>"1", "direction"=>"", "to"=>""}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "1"], ["direction", ""], ["created_at", "2017-08-06 13:11:50.323442"], ["updated_at", "2017-08-06 13:11:50.323442"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 24.2ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:11:52 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gRGMTNmzFXoMQc0qXoi1+b4pQechCdhyY8HPAQ6+86y62C0xF3ae0ATk+BEgNhz1coNIHfd14TlJqWIyPbnjKQ==", "translation"=>{"from"=>"12", "direction"=>"", "to"=>"ПЕРЕВОД"}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "12"], ["direction", ""], ["created_at", "2017-08-06 13:11:52.633740"], ["updated_at", "2017-08-06 13:11:52.633740"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 55ms (Views: 44.0ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:12:46 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 246ms (Views: 221.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/dictionary" for 127.0.0.1 at 2017-08-06 16:12:48 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for DictionaryController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:14:25 +0300
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:14:33 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9gIQ7dk2gZf5oCOpZkmIxSAtMNiAnR7QDHHWkww7c+/Ny7GQF/MKPfEFFpIY9yHJ7Ic5IlbhJ5smGXugPzxjag==", "translation"=>{"from"=>"dfgh", "direction"=>"h", "to"=>""}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "dfgh"], ["direction", "h"], ["created_at", "2017-08-06 13:14:33.930709"], ["updated_at", "2017-08-06 13:14:33.930709"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 37ms (Views: 22.2ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-06 16:14:42 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uXpFYgdNuRJQCmyfML64OueyfDJ4k9My3wZI89BZJOiCs+QfyYgyuFivWaROABE2Kxh1yK7v6nn1buXA4140bQ==", "translation"=>{"from"=>"df", "direction"=>"h", "to"=>"ПЕРЕВОД1243124"}, "commit"=>"Перевести"}
+Unpermitted parameter: :to
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "translations" ("from", "direction", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["from", "df"], ["direction", "h"], ["created_at", "2017-08-06 13:14:42.436549"], ["updated_at", "2017-08-06 13:14:42.436549"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 21.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-06 16:16:54 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DictionaryController#index as HTML
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 249ms (Views: 230.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/translate?utf8=%E2%9C%93&translation%5Bfrom%5D=sdfg&translation%5Bdirection%5D=dfg&translation%5Bto%5D=&commit=%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D1%81%D1%82%D0%B8" for 127.0.0.1 at 2017-08-06 16:16:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/translate"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

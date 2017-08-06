@@ -1,0 +1,22 @@
+<h1>Yandex dictionary wrapper</h1>
+  <%= form_for :translation, :url => url_for(:action => 'translate') do |f| %>
+  <p>
+    <%= f.label :Слово %><br>
+    <%= f.text_field :from, :value => @translation.from %>
+  </p>
+
+  <p>
+    <%= f.label :Направление %><br>
+    <%= f.text_field :direction, :value => @translation.direction %>
+  </p>
+
+  <p>
+    <%= f.label :Перевод %><br>
+    <%= f.text_field :to, :value => @translation.to%>
+  </p>
+
+  <p>
+    <%= f.submit "Перевести"%>
+  </p>
+
+<% end %>
