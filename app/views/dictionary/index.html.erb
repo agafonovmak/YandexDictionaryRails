@@ -1,22 +1,29 @@
-<h1>Yandex dictionary wrapper</h1>
+<h1>YandexDictionary wrapper</h1>
+  <p><%= link_to "История переводов", translation_index_path %></p>
   <%= form_for :translation, :url => url_for(:action => 'translate') do |f| %>
+
+  <% if @errors%>
+    <h1>Ошибка при переводе</h1>
+  <%end%>
+
   <p>
     <%= f.label :Слово %><br>
     <%= f.text_field :from, :value => @translation.from %>
   </p>
 
-  <p>
-    <%= f.label :Направление %><br>
-    <%= f.text_field :direction, :value => @translation.direction %>
-  </p>
-
-  <p>
-    <%= f.label :Перевод %><br>
-    <%= f.text_field :to, :value => @translation.to%>
-  </p>
+  <%= select_tag 'direction', options_for_select(@directions.map{|direction| [direction, direction] }) %>
 
   <p>
     <%= f.submit "Перевести"%>
   </p>
+
+  <% if @translation.to != nil %>
+    <ul>
+    <% @translation.make_array_from_string.each do |word| %>
+      <li><%= word %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
 
 <% end %>

@@ -1,0 +1,19 @@
+<%= link_to "Домой", root_path %>
+<h1>Исторя переводов</h1>
+
+<table>
+  <tr>
+    <th>Слово</th>
+    <th>Направления</th>
+    <th>Переводы</th>
+  </tr>
+
+  <% @translations.each do |translation| %>
+    <tr>
+      <td><%= translation.from %></td>
+      <td><%= translation.direction %></td>
+      <td><%= translation.to %></td>
+    </tr>
+  <% end %>
+
+</table>

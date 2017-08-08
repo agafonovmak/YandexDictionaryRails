@@ -1,17 +1,35 @@
 require 'yandex_dictionary'
 class DictionaryController < ApplicationController
   def index
+    @directions = YandexDictionary.get_languages
     @translation ||= Translation.new
   end
 
   def translate
-    @translation = Translation.create(params[:translation].permit(:from,:direction))
-    # translation_hash = params[:translation]
-    # @translation.from = translation_hash[:from]
-    # @translation.direction = translation_hash[:direction]
+    @directions = YandexDictionary.get_languages
+    @translation = Translation.new
 
-    @translation.to = YandexDictionary.translate(@translation.from, 'ru', 'en')
+    translation_hash = params[:translation]
+    @translation.from = translation_hash[:from]
 
-    render 'index'
+    @translation.direction = params[:direction].tr("\"", '')
+    dir = @translation.direction.split('-')
+
+    puts dir.class.name
+
+    puts dir[0]
+    puts dir[1]
+
+    begin
+      @translation.to = YandexDictionary.translate(@translation.from, dir[0], dir[1])
+    rescue NoMethodError #Ошибка возникает в геме.
+      @errors = true
+      render 'index'
+    else
+      @errors = false
+      @translation.save
+      render 'index'
+    end
+
   end
 end
