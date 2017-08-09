@@ -1,8 +1,13 @@
 require 'yandex_dictionary'
 class DictionaryController < ApplicationController
+
+  before_action :check_login
+
   def index
     @directions = YandexDictionary.get_languages
     @translation ||= Translation.new
+    puts UserSession.find.user.username
+    puts 'INDEX!!!'
   end
 
   def translate
@@ -27,9 +32,18 @@ class DictionaryController < ApplicationController
       render 'index'
     else
       @errors = false
-      @translation.save
+      @current_user.translations.create(@translation.serializable_hash)
       render 'index'
     end
 
+  end
+
+  protected
+  def check_login
+    if UserSession.find == nil
+      render 'login'
+    else
+      @current_user = UserSession.find.user
+    end
   end
 end

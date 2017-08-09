@@ -1,20 +1,17 @@
 class TranslationController < ApplicationController
-  # def show
-  #   @translation = Translation.find(params[:id])
-  # end
-  #
-  # def create
-  #   @translation = Translation.create(params[:translation].permit(:from,:direction))
-  #   # translation_hash = params[:translation]
-  #   # @translation.from = translation_hash[:from]
-  #   # @translation.direction = translation_hash[:direction]
-  #
-  #   @translation.to = 'ПЕРЕВОД'
-  #
-  #   redirect_to(@translation)
-  # end
+  before_action :check_login
 
   def index
-    @translations = Translation.all
+    puts @current_user.username
+    @translations = Translation.where user_id: @current_user.id
+  end
+
+  protected
+  def check_login
+    if UserSession.find == nil
+      render 'login'
+    else
+      @current_user = UserSession.find.user
+    end
   end
 end

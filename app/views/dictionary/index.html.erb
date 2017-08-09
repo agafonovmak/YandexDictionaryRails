@@ -1,6 +1,6 @@
 <h1>YandexDictionary wrapper</h1>
   <p><%= link_to "История переводов", translation_index_path %></p>
-  <%= form_for :translation, :url => url_for(:action => 'translate') do |f| %>
+  <%= form_for :translation, :url => url_for(:controller => 'dictionary',:action => 'translate') do |f| %>
 
   <% if @errors%>
     <h1>Ошибка при переводе</h1>

@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   post '/translate', to: 'dictionary#translate'
 
-  root :to=> 'dictionary#index'
+  get '/dictionary', to: 'dictionary#index'
+
+  post '/authenticate', to: 'user#authenticate'
+
+  root :to=> 'user#login'
 end
