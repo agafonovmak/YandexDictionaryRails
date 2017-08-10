@@ -1,0 +1,20 @@
+<h1>Регистрация новго пользователя</h1>
+
+<%= form_for :user, :url => url_for(:action => 'create') do |f| %>
+  <% if @errors%>
+    <h1>Пользователь с таким именем уже существует</h1>
+  <%end%>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text_field :username %>
+  </p>
+
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit "Зарегистрироваться"%>
+  </p>
+<% end %>

@@ -6,8 +6,6 @@ class DictionaryController < ApplicationController
   def index
     @directions = YandexDictionary.get_languages
     @translation ||= Translation.new
-    puts UserSession.find.user.username
-    puts 'INDEX!!!'
   end
 
   def translate
@@ -19,11 +17,6 @@ class DictionaryController < ApplicationController
 
     @translation.direction = params[:direction].tr("\"", '')
     dir = @translation.direction.split('-')
-
-    puts dir.class.name
-
-    puts dir[0]
-    puts dir[1]
 
     begin
       @translation.to = YandexDictionary.translate(@translation.from, dir[0], dir[1])
