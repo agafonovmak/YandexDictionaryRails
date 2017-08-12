@@ -1,4 +1,4 @@
-<h1>Регистрация новго пользователя</h1>
+<h1>Регистрация нового пользователя</h1>
 
 <%= form_for :user, :url => url_for(:action => 'create') do |f| %>
   <% if @errors%>
@@ -11,7 +11,7 @@
 
   <p>
     <%= f.label :Password %><br>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </p>
 
   <p>

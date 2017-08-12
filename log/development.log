@@ -4895,3 +4895,307 @@ Processing by TranslationController#index as HTML
 Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-12 18:38:08 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (179.7ms)
+Completed 200 OK in 695ms (Views: 689.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2017-08-12 18:38:13 +0300
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user" for 127.0.0.1 at 2017-08-12 18:38:28 +0300
+Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jghVOJ5IEs5wkX42/+TNJSdWMEdbTmGYCuzxEsSRdKdM92fRV8QxEK/JFaqyvW0BLZeats9QL7YtO42yBK+uBw==", "user"=>{"username"=>"user", "password"=>"[FILTERED]"}, "commit"=>"Зарегистрироваться"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "user"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."persistence_token" = ? LIMIT ?[0m  [["persistence_token", "69fafc7e603176df22df2d9efa526a3c2390145c5d3aef2ea95d9d4958898570342f368cf189548a7a11234a38f2d81e41266cd3efa64aebf2b5b4b365723875"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "password", "username", "persistence_token") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2017-08-12 15:38:29.185433"], ["updated_at", "2017-08-12 15:38:29.185433"], ["password", "password"], ["username", "user"], ["persistence_token", "69fafc7e603176df22df2d9efa526a3c2390145c5d3aef2ea95d9d4958898570342f368cf189548a7a11234a38f2d81e41266cd3efa64aebf2b5b4b365723875"]]
+  [1m[35m (313.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dictionary
+Completed 302 Found in 536ms (ActiveRecord: 315.5ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:38:29 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 337ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 18:38:36 +0300
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for 127.0.0.1 at 2017-08-12 18:38:44 +0300
+Processing by UserController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nb249OehtFF4j1bQ5X5yk9mk60Vb1Lb5W16Sje9UjLazGrQ4R0nCDd0XTnmL6J5DotzttZzh7kOaf4Db/ImebA==", "user"=>{"username"=>"user", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/dictionary
+Completed 302 Found in 50ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:38:44 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 144ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:38:45 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.3ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered translation/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 18:38:46 +0300
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for 127.0.0.1 at 2017-08-12 18:38:55 +0300
+Processing by UserController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xk3m9luzC+p933ip9IVMP2+PB48tJnBfPLFF0wFaQnknmk4bN3OQCRkdiZqrFtUpaElYUnmndRuIXXx/VVsAcg==", "user"=>{"username"=>"user", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/dictionary
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:38:55 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 105ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-12 18:39:07 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnp3ciIwlvXGqr8/nSe4mc//lDS3agJXabwBe46c7efs3Xu+gtjgqWMyp5bzsVRJtIeSxHBfWu2onRMtnUH/PQ==", "translation"=>{"from"=>"табуретка"}, "direction"=>"\"ru-en\"", "commit"=>"Перевести"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "translations" ("from", "to", "direction", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["from", "табуретка"], ["to", "[\"stool\"]"], ["direction", "ru-en"], ["created_at", "2017-08-12 15:39:07.515763"], ["updated_at", "2017-08-12 15:39:07.515763"], ["user_id", 7]]
+  [1m[35m (84.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 451ms (Views: 16.2ms | ActiveRecord: 85.9ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:39:15 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered translation/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 18:39:19 +0300
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2017-08-12 18:39:21 +0300
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user" for 127.0.0.1 at 2017-08-12 18:39:28 +0300
+Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mLKWHdVoCVFAs/m4V1J/+00Ovu61mjv1cGHknTh5v6xaTaT0HOQqj5/rkiQaC9/fR88UHyGEddtXtpg9+EdlDA==", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"Зарегистрироваться"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."persistence_token" = ? LIMIT ?[0m  [["persistence_token", "44eee30d257c442fdc865b1003eb3f43d381e4bcac10cb2297ddb2f6cf9959e7d416ef93f7352eecf2ca29d0bc72a9570d0f3733af71651dd0f2abf276a8546b"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "password", "username", "persistence_token") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2017-08-12 15:39:28.007963"], ["updated_at", "2017-08-12 15:39:28.007963"], ["password", "123"], ["username", "user1"], ["persistence_token", "44eee30d257c442fdc865b1003eb3f43d381e4bcac10cb2297ddb2f6cf9959e7d416ef93f7352eecf2ca29d0bc72a9570d0f3733af71651dd0f2abf276a8546b"]]
+  [1m[35m (206.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/dictionary
+Completed 302 Found in 215ms (ActiveRecord: 207.0ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:39:28 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 104ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:39:29 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered translation/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-12 18:39:50 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qJTaikjQKkpa5jyaofEScMEqcOpdTFHaBAGe2stXfcqGM9ZG6DhcFv9+JDPPZ/6gulJ2Gpp5CWDFIIyM2IpvEA==", "translation"=>{"from"=>"table"}, "direction"=>"\"en-ru\"", "commit"=>"Перевести"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "translations" ("from", "to", "direction", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["from", "table"], ["to", "[\"таблица\", \"стол\", \"скрижаль\", \"табель\", \"расписание\", \"табличка\", \"рольганг\", \"кухня\", \"пища\", \"планшайба\"]"], ["direction", "en-ru"], ["created_at", "2017-08-12 15:39:50.763650"], ["updated_at", "2017-08-12 15:39:50.763650"], ["user_id", 8]]
+  [1m[35m (100.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 354ms (Views: 14.6ms | ActiveRecord: 100.6ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:39:52 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered translation/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 18:40:56 +0300
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for 127.0.0.1 at 2017-08-12 18:41:04 +0300
+Processing by UserController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nldDX9slfYCqpO/kKBfJxW/ejEiyotvzkNmYYYx7m3V/gOuyt+XmY85mHtd3hFDTaBjTleYj3rckNaHN2HrZfg==", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/dictionary
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:41:04 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 109ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/translate" for 127.0.0.1 at 2017-08-12 18:41:08 +0300
+Processing by DictionaryController#translate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jv1jVjwz072W+PXtXwR7GxPbKHVmZDNTdpdWutQoHjegWm+anNul4TNg7UQxkpfLaKMuhaFRa+m3tkTsx/UM7Q==", "translation"=>{"from"=>"jkyj"}, "direction"=>"\"be-be\"", "commit"=>"Перевести"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 297ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:48:10 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered translation/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:48:11 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 209ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:48:13 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered translation/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:48:14 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 183ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 18:49:11 +0300
+Processing by UserController#login as HTML
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for 127.0.0.1 at 2017-08-12 18:49:18 +0300
+Processing by UserController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Qkbz1XrM60Ca4IN8OjvSAyt0qWT0PB8HWStZ2LKbCbfrhcD9QNF8afzmqSefgOYd9XUVVTlqMbcRb8xcRd+/A==", "user"=>{"username"=>"user", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user"], ["LIMIT", 1]]
+  Rendering user/login.html.erb within layouts/application
+  Rendered user/login.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/authenticate" for 127.0.0.1 at 2017-08-12 18:49:23 +0300
+Processing by UserController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uh45L2J1jlNlEBOf6iR4x8Bi/rMF3ivq+pub5TBMddeUuTXjwp34D8CICzaEspQXuxr4Q8Lrc1A7uomzI5FnDQ==", "user"=>{"username"=>"user1", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/dictionary
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/dictionary" for 127.0.0.1 at 2017-08-12 18:49:23 +0300
+Processing by DictionaryController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering dictionary/index.html.erb within layouts/application
+  Rendered dictionary/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 115ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/translation" for 127.0.0.1 at 2017-08-12 18:49:31 +0300
+Processing by TranslationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering translation/index.html.erb within layouts/application
+  [1m[36mTranslation Load (0.2ms)[0m  [1m[34mSELECT "translations".* FROM "translations" WHERE "translations"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered translation/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35mSQL (99.2ms)[0m  [1m[31mDELETE FROM "translations"[0m
+  [1m[35mSQL (89.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
